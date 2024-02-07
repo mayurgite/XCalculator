@@ -14,7 +14,12 @@ export default function App() {
 
   const evaluateExpression = () => {
     try {
-      setResult(eval(expression));
+      const evalResult = eval(expression);
+      console.log(evalResult)
+      if(evalResult === "" || evalResult=== undefined)
+        setResult("Error");
+    else
+      setResult(evalResult);
     } catch (error) {
       setResult("Error");
     }
